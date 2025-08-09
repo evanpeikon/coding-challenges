@@ -68,7 +68,7 @@ def calculate_similarity_matrix(sequences, match_score=2, mismatch_score=-1, gap
           for i in range(0,len(filtered_seqs[x])):
             if filtered_seqs[x][i]==filtered_seqs[y][i]:
               count+=match_score
-            if filtered_seqs[x][i]!=filtered_seqs[y][i]:
+            else:
               count+=mismatch_score
           count+= (len(filtered_seqs[y])-len(filtered_seqs[x]))*gap_penality #Apply gap penalty
           scores.append(count)
